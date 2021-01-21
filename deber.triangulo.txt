@@ -1,0 +1,46 @@
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+	float area;
+	float cateto1;
+	float cateto2;
+	float hip;
+	float l1,l2,l3;
+	cout << "Ingrese el lado 1:" << endl;
+	cin >> l1;
+	cout << "Ingrese el lado 2:" << endl;
+	cin >> l2;
+	cout << "ingrese lado 3 :" << endl;
+	cin >> l3;
+	if (l1>l2) {
+		cateto1 = l2;
+		if (l1>l3) {
+			hip = l1;
+			cateto2 = l3;
+		} else {
+			hip = l3;
+			cateto2 = l1;
+		}
+	} else {
+		cateto1 = l1;
+		if (l2>l3) {
+			hip = l2;
+			cateto2 = l3;
+		} else {
+			hip = l3;
+			cateto2 = l2;
+		}
+	}
+	
+	if (pow(hip,2)==pow(cateto1,2)+pow(cateto2,2)) {
+		area = (cateto1*cateto2)/2;
+		cout << "El area es: " << area << endl;
+	} else {
+		cout << "No es un triangulo rectangulo." << endl;
+	}
+	return 0;
+}
+
