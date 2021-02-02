@@ -1,0 +1,76 @@
+#include <iostream>
+#include<fstream>
+using namespace std;
+
+int busqueda(int arr[], int t, int dato);
+void ingresarElementosArreglo(int arr[], int t);
+void imprimirElementosArreglo(int arr[], int t);
+int solicitarNumero();
+void guarda(int i,int arr[], int dato);
+
+int main() 
+{
+  int a[5]={4,1,2,3,5};
+  //cout<<"**************"<<busqueda(a,5,4)<<endl;
+  int dato=solicitarNumero();
+  if(busqueda(a,5,dato)==3)
+  {
+    cout<<"ELEMENTO NO ENCONTRADO";
+  }
+  else 
+  {
+    cout<<"ELEMENTO ENCONTRADO EN LA POSICIÓN "<<busqueda(a,5,dato)+1;
+	guarda(busqueda(a,5,dato),a,dato);
+  }
+
+}
+int busqueda(int arr[], int t, int dato)
+{
+  int i;
+
+  for( i=0 ; i<5 ; i++)
+  {
+      
+    if(arr[i]==dato)
+    {
+      return i;
+    }
+  }
+  
+  return 3;
+}
+
+void ingresarElementosArreglo(int arr[], int t)
+{
+
+
+}
+
+
+void imprimirElementosArreglo(int arr[], int t)
+{
+
+}
+
+int solicitarNumero()
+{
+  int n;
+  cout<<"ingresa el número:";
+  cin>>n;
+  return n;
+}
+void guarda(int i,int arr[],int dato){
+ofstream archivoprueba;
+archivoprueba.open("LINEAL",ios::app);
+
+archivoprueba<<"el arreglo es ";
+
+for(i=0;i<5;i++){
+archivoprueba<<arr[i];
+}
+archivoprueba<<endl;
+
+archivoprueba<<"el dato a buscar es :"<<dato<<endl;
+archivoprueba<<"el dato esta en la posicion:"<<i+1<<endl;
+archivoprueba.close();
+}
