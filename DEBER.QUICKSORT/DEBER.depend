@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1615264438 source:c:\users\user\desktop\progrmas\deber\main.cpp
+	<iostream>
+	<fstream>
+	<ctime>
+	"quicksort.h"
+
+1615264384 c:\users\user\desktop\progrmas\deber\quicksort.h
+
